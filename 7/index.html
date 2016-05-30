@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>你好呀,李银河 - PropTypes</title>
+    <script src="http://cdn.bootcss.com/react/15.1.0/react.js"></script>
+    <script src="http://cdn.bootcss.com/react/15.1.0/react-dom.js"></script>
+    <script src="http://cdn.bootcss.com/babel-core/5.8.24/browser.js"></script>
+</head>
+<body>
+    字符串 (这里会有警告 :Warning: Failed propType: Invalid prop `name` of type `string` supplied to `Demo`, expected `number`.)
+    <div id="container"></div>
+    <br>
+    数字
+    <div id="container2"></div>
+    <script type="text/babel">
+      var Demo = React.createClass({
+        propTypes:{
+          name:React.PropTypes.number.isRequired
+          //会有警告,因为传进来的值不是number,而是一个字符串
+        },
+        render:function(){
+          return <div>{this.props.name}</div>
+        }
+      });
+      ReactDOM.render(<Demo name='你好'/>,document.getElementById("container"));
+      ReactDOM.render(<Demo name={789}/>,document.getElementById("container2"));
+    </script>
+</body>
+</html>

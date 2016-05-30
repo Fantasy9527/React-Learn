@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>你好呀,李银河</title>
+    <script src="http://cdn.bootcss.com/react/15.1.0/react.js"></script>
+    <script src="http://cdn.bootcss.com/react/15.1.0/react-dom.js"></script>
+    <script src="http://cdn.bootcss.com/babel-core/5.8.24/browser.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+    <script type="text/babel">
+        //变量第一个字母必须大写
+        var Demo = React.createClass({
+          render:function(){
+            return <p>{this.props.message}</p>
+          }
+        });
+
+        ReactDOM.render(<Demo message="我是props"/>,document.getElementById('container'))
+    </script>
+</body>
+</html>

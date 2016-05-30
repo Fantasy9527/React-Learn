@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>你好呀,李银河 - React.Children.map</title>
+    <script src="http://cdn.bootcss.com/react/15.1.0/react.js"></script>
+    <script src="http://cdn.bootcss.com/react/15.1.0/react-dom.js"></script>
+    <script src="http://cdn.bootcss.com/babel-core/5.8.24/browser.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+    <script type="text/babel">
+      var Demo =  React.createClass({
+        render :function(){
+          console.log(React.Children);
+          console.log(this.props);
+          //这里需要注意， this.props.children 的值有三种可能：如果当前组件没有子节点，它就是 undefined ;如果有一个子节点，数据类型是 object ；如果有多个子节点，数据类型就是 array 。所以，处理 this.props.children 的时候要小心。
+      return  <div> //必须要一个标签把所有东西包起来
+              {
+                React.Children.map(this.props.children,function(children){
+                return <div>{children}</div>
+                })
+              }
+            </div>
+
+        }
+      });
+  ReactDOM.render(<Demo>
+                                        <p>段落1</p>
+                                        <p>段落2</p>
+                                        <p>段落3</p>
+                                        <p>段落4</p>
+                                        <p>段落5</p>
+                                      </ Demo>
+       ,document.getElementById('container'))
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>你好呀,李银河</title>
+    <script src="http://cdn.bootcss.com/react/15.1.0/react.js"></script>
+    <script src="http://cdn.bootcss.com/react/15.1.0/react-dom.js"></script>
+    <script src="http://cdn.bootcss.com/babel-core/5.8.24/browser.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+    <script type="text/babel">
+        var data=[
+        <p>小白</p>,
+        <p>小黄</p>,
+        <p>小黑</p>,
+        <p>小粉</p>,
+        <p>小河</p>
+        ];
+            ReactDOM.render(
+              <div>
+                        {data}
+                        给你们拜年了.
+              </div>
+            ,document.getElementById('container'))
+            //虽然可以这么做,但是又有关于key的警告
+    </script>
+</body>
+</html>
